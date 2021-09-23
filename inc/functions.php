@@ -15,3 +15,18 @@ function getArrayRandNumber($n){
     }
     return $arr;
 }
+
+/**
+ * @param arr:Array Integer 
+ * @return Integer  Arihmetical-Mean
+ */
+function getMedia($arr){
+    $len=count($arr);
+    $sum=0;
+    for($i=0; $i<$len; $i++){
+        $sum+=$arr[$i];
+
+    }
+     return floor($sum /$len);
+    
+}

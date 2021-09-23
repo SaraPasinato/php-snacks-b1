@@ -15,10 +15,9 @@
      */
 include_once __DIR__ . "/inc/functions.php";
 
-$name = $_GET['name'];
-$email = $_GET['email'];
-$age = $_GET['age'];
-
+if(empty($_GET['name']) || empty($_GET['email']) || empty($_GET['age'])){
+    echo 'devi inserire  name, email e age';
+}
 ?>
 
 <!DOCTYPE html>
@@ -32,10 +31,13 @@ $age = $_GET['age'];
 </head>
 
 <body>
-    <div style="height:50px; width:100%; border: 2px solid #ddd;text-align:center;">
+    <div style="text-align:center;">
+    <?php if(isset($email) && isset($name) && isset($age)) {?>
         <p> <?php echo chekEmail($name, $email, $age) ?></p>
+   
     </div>
     <p style="color:red;text-align:center;"> <?php echo chekEmailStrict($name, $email, $age) ?></p>
+    <?php  }?>
 </body>
 
 </html>

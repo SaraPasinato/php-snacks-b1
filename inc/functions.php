@@ -43,3 +43,28 @@ function chekEmail($name, $mail, $age)
     }
     return "Accesso negato";
 }
+/**
+ * @param $name String 
+ * @param $mail String 
+ * @param $age Int 
+ * @return String 
+ */
+function chekEmailStrict($name, $mail, $age)
+{
+    $str_err=" ";
+    if(strlen($name)<=3) {
+        $str_err="Err-name: nome non valido.\n";
+    }
+    if (!strpos($mail, ".")) {
+        $str_err.="Err-email: email non valida manca . \n";
+    }
+    if (!strpos($mail, "@")){ 
+        $str_err.="Err-email: email non valida manca @ \n";
+    }
+    if (!is_numeric($age)){
+         $str_err.="Err-age: età non è un numero \n";
+    }
+  
+
+    return $str_err;
+}

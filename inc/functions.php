@@ -28,7 +28,7 @@ function getMedia($arr)
     for ($i = 0; $i < $len; $i++) {
         $sum += $arr[$i];
     }
-    return floor($sum / $len);
+    return round($sum / $len);
 }
 /**
  * @param $name String 
